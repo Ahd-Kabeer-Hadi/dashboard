@@ -1,0 +1,17 @@
+<section class="mt-5 row">
+    <div class="col-lg-3 col-md-4 col-sm-4 " *ngFor="let dept of commonSrv.departments">
+        <a href="#" target="_blank" rel="noopener noreferrer">
+            <div class="card bg-white border-radius p-4 mb-3"  (touchstart)="addHoverClass($event)" (touchend)="removeHoverClass($event)">
+                <div class="card-img card-img-top">
+                    <img [src]="dept['icon']" alt="" srcset="">
+                </div>
+                <h3>{{dept['department']}}</h3>
+                <p class="text-grey-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-solid fa-arrow-right card-icon p-2"></i>
+                </a>
+            </div>
+        </a>
+       
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<section *ngIf="!commonSrv.isMobile && !isExpanded">
+    <a href="#" target="_blank" rel="noopener noreferrer">
+        <div *ngFor="let menuitem of commonSrv.menus">
+            <div class="text-center menuitem">
+                <img [src]="menuitem['menuIcon']" alt="" srcset="">
+            </div>
+    
+        </div>
+    </a>
+</section>
+
+<section *ngIf="!commonSrv.isMobile && isExpanded">
+    <div *ngFor="let menuitem of commonSrv.menus">
+        <div class="text-center menuitem flex-row">
+            <img [src]="menuitem['menuIcon']" alt="" srcset="">
+            <div class="col" style="margin-left: .5rem;">
+                {{menuitem['menuName']}}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="col-12 z-max" *ngIf="commonSrv.isMobile && isExpanded">
+    <i class="fa-solid fa-xmark closebutton text-theme-blue" (click)="onExpandCollapseClick()"></i>
+    <div  *ngFor="let menuitem of commonSrv.menus">
+        <div class="text-center menuitem flex-row">
+            <img [src]="menuitem['menuIcon']" alt="" srcset="">
+            <div class="col" style="margin-left: .5rem;">
+                {{menuitem['menuName']}}
+            </div>
+        </div>
+    </div>
+</section>
