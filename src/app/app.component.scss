@@ -1,0 +1,118 @@
+
+
+.header{
+    max-height: 60px;
+    background-color: #FFFFFF;
+    border-bottom:#F2F2F2 .5px solid ;
+    position: fixed;
+    z-index: 99;
+   
+}
+.controller{
+    background-color: #0F0FD1;
+    width: 60px;
+    height: 60px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.logotext{
+    color: #0F0FD1;
+    font-weight: bolder !important;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+.actionbar{
+    display: flex; 
+    justify-content: flex-end;
+    justify-items: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 0rem 2rem 0rem 2rem;
+    
+}
+.actionbar .avatar{
+    max-width: 100%;
+    max-height: 35px;
+}
+.actionbar img {
+    margin-left: 1.75rem;
+}
+.headSpace{
+    margin-top: 3rem !important;
+}
+.canvas {
+    margin: 3.25rem 4.25rem 3.25rem 8.25rem;
+    padding: 1.25rem;
+}
+.menuSpaceinit{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: hidden;
+    position: fixed;
+}
+.menu-width-closed{
+    width: 60px;
+    background-color: white;
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+    .actionbar{
+        display: flex; 
+        justify-content: flex-end;
+        justify-items: center;
+        align-items: center;
+        flex-direction: row;
+        padding: 0rem 1rem 0rem 1rem;
+        
+    }
+    .actionbar .avatar{
+        max-width: 100%;
+        max-height: 27.5px;
+    }
+    .actionbar img {
+        margin-left: .8rem;
+        
+    }
+    .menuSpaceinit{
+        margin-top: 0 !important;
+    }
+
+    .headSpace{
+        margin-top: 5rem !important;
+    }
+
+    .canvas {
+        margin: 0rem !important;
+        padding:  1rem !important;;
+    }
+    
+}
+  
+/* Tablets and larger screens */
+@media (min-width: 768px) {
+    .canvas{
+        margin: auto;
+        padding: auto;
+    }
+   
+  }
+  
+/* Larger desktop screens */
+@media (min-width: 992px) {
+    .canvas {
+        margin: 3.25rem 4.25rem 3.25rem 8.25rem;
+        padding: 1.25rem;
+    }
+  }
+  
+/* Extra-large desktop screens */
+@media (min-width: 1200px) {
+   
+  }
+  

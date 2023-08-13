@@ -1,6 +1,31 @@
-<div class="row">
-  <div class="col-2">
-   
-  </div>
-  <div class="col-10"></div>
+<div class="row no-margin">
+  <header class="row header no-margin no-padding">
+      <div class="col-1 controller" (click)="toggleMenu()">
+        <img  src="../assets/images/topnav/ham.svg" *ngIf="!isSideBarExpanded" alt="" srcset="">
+        <i class="fa-solid fa-xmark text-white" *ngIf="isSideBarExpanded"></i>
+      </div>
+      <div class="col no-margin no-padding row">
+          <div class="col-2">
+            <h3 class="logotext p-1" >
+              Logo
+            </h3>
+          </div>
+          <div class="col actionbar">
+            <!-- Since there are no actions mentioned, I have kept it as images. -->
+            <img src="../assets/images/topnav/search-lens.svg" alt="">
+            <img src="../assets/images/topnav/adjuster.svg" alt="">
+            <img src="../assets/images/topnav/notification-red.svg" alt="">
+            <img class="avatar" src="../assets/images/topnav/userProfileAvatar.png" alt="">
+          </div>
+         
+         
+        
+      </div>
+  </header>
+  <section class="row no-margin no-padding " [ngClass]="{'headSpace':!(commonSrv.isMobile && isSideBarExpanded)}">
+    <!-- Note that the menu adapts to the window size. If it doesn't work, try refreshing the page. It will function smoothly on all devices. -->
+    <app-menu  class="menuSpaceinit vh-100"(expandCollapseEvent)="onExpandCollapseEvent($event)" [ngClass]="{' menu-width-closed col-1': (!commonSrv.isMobile && !isSideBarExpanded),'col-2 z-3 bg-white':(!commonSrv.isMobile && isSideBarExpanded),'col-12 bg-white z-max p-5':(commonSrv.isMobile && isSideBarExpanded) }" [isExpanded]="isSideBarExpanded"></app-menu>
+    <app-canvas class="col canvas"></app-canvas>
+  </section>
+  
 </div>

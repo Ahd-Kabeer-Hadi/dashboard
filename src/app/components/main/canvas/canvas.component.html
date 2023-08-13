@@ -1,0 +1,146 @@
+<section class="col-12 fill-available-width flex-col mb-3">
+    <div class="row box-margin flex-1">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xl-4 col-xxl-4 flex-1">
+            <div class="card greeting-card border-radius p-3 mb-3">
+                <div class="welcome-grid">
+                    <h3 class="mb-3"> Hello, <br> <span class="welcome-text-name">David Turner!</span> </h3>
+                    <p>Here is your review summary</p>
+                    <div class="col-12 flex-row mb-3">
+                        <!-- <div class="hexagon-pill" style="background-color: #824AED;">
+                            <div class="content">
+                                <img src="../../../../assets/images/canvas/message.svg" alt="" srcset="">
+                            </div>
+                        </div> -->
+                        <img src="../../../../assets/images/canvas/message.svg" alt="" srcset="">
+                         <!-- this was prevously used as shape and the rounded curves didn't came well so changed it to svg -->
+                        <div class="col" style="margin-left: 1.2rem;">
+                            <span class="text-grey-sm">Maintenance requests</span> <br>
+                            <span style="font-size: larger;">12</span>
+                        </div>
+                    </div>
+                    <div class="col-12 flex-row ">
+                        <!-- <div class="hexagon-pill" style="background-color: #3AAFE4;">
+                            <div class="content">
+                                <img src="../../../../assets/images/canvas/notification.svg" alt="" srcset="">
+                              
+                            </div>
+                        </div> -->
+                        <img src="../../../../assets/images/canvas/notification.svg" alt="" srcset="">
+                        <!-- this also -->
+                        <div class="col" style="margin-left: 1.2rem;">
+                            <span class="text-grey-sm">Notifications</span> <br>
+                            <span style="font-size: larger;">25</span>
+                        </div>
+                    </div>
+                   <div class="bottom-right-image"> 
+                    <img src="../../../../assets/images/canvas/welcomeImg.svg" alt=""  srcset="">
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xl-4 col-xxl-4 flex-1">
+            <div class="card bg-white border-radius p-3 mb-3">
+                <h3 class="mb-4">
+                    Maintenance requests
+                </h3>
+                
+                <div class="col-12 " *ngFor="let request of commonSrv.maintenance_requests; let i = index">
+                    <div class="flex-row">
+                        <img [src]="request['profile_pic']" alt="" srcset="">
+                        <div class="col" style="margin-left: 1.2rem;">
+                            <h4 class="no-margin mb-2">{{ request['request'] }}</h4>
+                            <p class="text-grey-sm no-margin mb-3">By {{ request['requested_by'] }}</p>
+                            <span class="badge" [ngClass]="{'badge-success':(request['priority'] =='low'), 'badge-danger':!(request['priority'] =='low')}">{{ request['priority'] }} priority</span>
+                        </div>
+                    </div>
+                    <hr  />
+                </div>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="text-theme-blue view-all">
+                    view all requests  <img style="margin-left: .5rem;" src="../../../../assets/images/canvas/mdi_arrow_forward.svg" alt="" srcset="">
+                </a>
+                
+                
+                
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xl-4 col-xxl-4 flex-1">
+            <div class="card mach-output-0 border-radius p-3 mb-3 text-white ">
+                <div class="col-12 flex-row ">
+
+                    <!-- <div class="hexagon-pill-top" style="background-color:rgba(255, 255, 255, 0.4);">
+                        <div class="content">
+                            <img src="../../../../assets/images/canvas/notification.svg" alt="" srcset="">
+                        </div>
+                    </div> -->
+                    <div class="mach-icon">
+                        <img src="../../../../assets/images/canvas/gears.svg" alt="" srcset="">
+                    </div>
+                    <!-- this was prevously used as masked shape around an svg and the rounded curves didn't came well so changed it to svg -->
+                    
+                    <div class="col" style="margin-left: 1.2rem;">
+                        <p>Machine Output 1</p>
+                        <h2 style="font-size: 2em;">19M <span style="font-size: x-small;">kg</span></h2>
+                        <p style="font-size: small; color: #047B5C;" class="view-all"><img style="margin-right: .8em;" src="../../../../assets/images/canvas/mdi_play_arrow_up.svg" alt="" srcset="">12.57%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card mach-output-1 border-radius p-3 mb-3 text-white">
+                <div class="col-12 flex-row ">
+                    <!-- <div class="hexagon-pill-top" style="background-color:rgba(255, 255, 255, 0.4);">
+                        <div class="content">
+                            <img src="../../../../assets/images/canvas/notification.svg" alt="" srcset="">
+                        </div>
+                    </div> -->
+                    <div class="mach-icon">
+                        <img src="../../../../assets/images/canvas/gears.svg" alt="" srcset="">
+                    </div>
+                    <div class="col" style="margin-left: 1.2rem;">
+                        <p>Machine Output 2</p>
+                        <h2 style="font-size: 2em;">378.05 <span style="font-size: x-small;">mtr</span></h2>
+                        <p style="font-size: small; color: #F85439;" class="view-all"><img style="margin-right: .8em;" src="../../../../assets/images/canvas/mdi_play_arrow_down.svg" alt="" srcset=""> -15.36%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="col-12  fill-available-width no-margin no-padding">
+    <div class="card bg-white border-radius p-4 mb-3 fill-available-width no-margin no-padding">
+        
+        
+        <div class="row">
+           
+            <div class="col-md-12 col-lg-4 mb-3">
+                <div class="col-12">
+                    <h3 class="mb-4 ">
+                        Order summary
+                    </h3>
+                </div>
+                <h2 class="no-margin mb-3" style="font-size: 2em; font-weight: bolder;">7,462</h2>
+                <h4 class="no-margin mb-4"> Total orders (last 30 days)</h4>
+                <div class="col-12 flex-row ">
+                    <img src="../../../../assets/images/canvas/growth.svg" alt="" srcset="">
+                    <div class="col" style="margin-left: 1.2rem;">
+                        <span class="text-grey-sm">You have a <span style="color: #05B184;font-weight: bolder;">25% growth</span> in comparison <br> with previous month</span>
+                    </div>
+                </div>
+                <div class="col-12 flex-row ">
+                    <img src="../../../../assets/images/canvas/bluetick.svg" alt="" srcset="">
+                    <div class="col" style="margin-left: 1.2rem;">
+                        <span class="text-grey-sm">Your target for this month is 6,000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <highcharts-chart 
+                [Highcharts]="Highcharts"
+                [options]="chartOptions"
+                class="chart-container"
+              ></highcharts-chart>
+            </div>
+        </div>
+    </div>
+    
+</section>
+<hr class="mt-5">
+<app-departments></app-departments>
